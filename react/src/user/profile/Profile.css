@@ -1,0 +1,39 @@
+.profile-container {
+    padding-top: 30px;
+}
+
+
+
+.profile-info .profile-name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.profile-info .profile-email {
+    font-weight: 400;
+}
+
+
+
+.text-avatar span {
+    line-height: 200px;
+    color: #fff;
+    font-size: 3em;
+}
+
+table {
+    border: 2px solid black;
+    width: 800px;
+    height: 200px;
+    vertical-align: middle;
+    text-align: center;
+}
+ 
+th {
+    border: 1px solid black;
+}
+ 
+td {
+    text-align: center;
+    border: 1px solid black;
+}

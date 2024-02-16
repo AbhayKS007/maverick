@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    build: . # Build the Spring Boot application from current directory
+    ports:
+      - "8080:8080" # Map the Spring Boot application port to the host machine
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/login?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 12345678
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest # You can change the version as needed
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: login
+    volumes:
+      - mysql-data:/var/lib/mysql # Persist data volume for the MySQL server
+
+volumes:
+  mysql-data: # Named volume for MySQL
